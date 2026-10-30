@@ -10,13 +10,13 @@ describe('accessible form fields', () => {
         <input />
       </Field>,
     )
-    const input = screen.getByRole('textbox', { name: 'Tên đăng nhập', exact: true })
+    const input = screen.getByRole('textbox', { name: 'Tên đăng nhập' })
     rerender(
       <Field label="Tên đăng nhập" error="Cần nhập tên đăng nhập">
         <input />
       </Field>,
     )
-    expect(screen.getByRole('textbox', { name: 'Tên đăng nhập', exact: true })).toBe(input)
+    expect(screen.getByRole('textbox', { name: 'Tên đăng nhập' })).toBe(input)
     expect(input).toHaveAccessibleDescription('Cần nhập tên đăng nhập')
     expect(input).toHaveAttribute('aria-invalid', 'true')
   })
